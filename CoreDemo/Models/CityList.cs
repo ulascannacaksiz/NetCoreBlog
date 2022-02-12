@@ -5,4 +5,5 @@
         public int CityId { get; set; }
         public string City { get; set; }
     }
+   
 }

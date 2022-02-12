@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using CoreDemo.Models;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -98,16 +100,30 @@ namespace CoreDemo.Controllers
                 new CityList{CityId=80,City="OSMANİYE"},
                 new CityList{CityId=81,City="DÜZCE"},
             };
-
-            return View(CityList);
+            ViewBag.City = CityList;
+            return View();
         }
         [HttpPost]
         public IActionResult Index(Writer p)
         {
-            p.WriterStatus = true;
-            p.WriterAbout = "Deneme Test";
-            wm.WriterAdd(p);
-            return RedirectToAction("Index", "Blog");
+            WriterValidator wv = new WriterValidator();
+            ValidationResult results = wv.Validate(p);
+            if (results.IsValid)
+            {
+                p.WriterStatus = true;
+                p.WriterAbout = "Deneme Test";
+                wm.WriterAdd(p);
+                return RedirectToAction("Index", "Blog");
+            }
+            else
+            {
+                foreach(var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+
         }
     }
 }
