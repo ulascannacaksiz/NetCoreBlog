@@ -100,7 +100,7 @@ namespace CoreDemo.Controllers
                 new CityList{CityId=80,City="OSMANİYE"},
                 new CityList{CityId=81,City="DÜZCE"},
             };
-            ViewBag.City = CityList;
+            ViewBag.Cities = CityList;
             return View();
         }
         [HttpPost]
