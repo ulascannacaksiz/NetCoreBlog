@@ -12,9 +12,7 @@ namespace CoreDemo.Controllers
     public class RegisterController : Controller
     {
         WriterManager wm = new WriterManager(new EfWriterRepository());
-
-        [HttpGet]
-        public IActionResult Index()
+        public List<CityList> getCityList()
         {
             var CityList = new List<CityList>()
             {
@@ -100,7 +98,12 @@ namespace CoreDemo.Controllers
                 new CityList{CityId=80,City="OSMANİYE"},
                 new CityList{CityId=81,City="DÜZCE"},
             };
-            ViewBag.Cities = CityList;
+            return CityList;
+        }
+        [HttpGet]
+        public IActionResult Index()
+        {
+            ViewBag.Cities = getCityList();
             return View();
         }
         [HttpPost]
@@ -108,6 +111,8 @@ namespace CoreDemo.Controllers
         {
             WriterValidator wv = new WriterValidator();
             ValidationResult results = wv.Validate(p);
+            ViewBag.Cities = getCityList();
+
             if (results.IsValid)
             {
                 p.WriterStatus = true;
