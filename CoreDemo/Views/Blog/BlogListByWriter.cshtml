@@ -17,17 +17,53 @@
         <th>Düzenle</th>
     </tr>
     @foreach (var item in Model)
-   {
-    <tr>
-        <td>@item.BlogID</td>
-        <td>@item.BlogTitle</td>
-        <td>@item.BlogCreateDate</td>
-        <td>@item.CategoryID</td>
-        <td>@item.BlogStatus</td>
-        <td><a href="#" class="btn btn-danger">Sil</a></td>
-        <td><a href="#" class="btn btn-warning">Düzenle</a></td>
-    </tr>
-   }
-</table>
+    {
+        <tr>
+            <td>@item.BlogID</td>
+            <td>@item.BlogTitle</td>
+            <td>@(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))</td>
+            <td>@item.Category.CategoryName</td>
+            <td>
+                @if (item.BlogStatus == true)
+                {
+                    <label class="badge badge-gradient-success">Aktif</label>
+                }
+                else
+                {
+                    <label class="badge badge-gradient-danger">Pasif</label>
+                }
+            </td>
+            <td><button href="#" value="@item.BlogID" class="btn btn-danger deletebtn">Sil</button></td>
+            <td><a href="#" class="btn btn-warning">Düzenle</a></td>
+        </tr>
 
-<a href="#" class="btn btn-info">Yeni Blog Oluştur</a>
+    }
+</table>
+<a href="/Blog/BlogAdd" class="btn btn-info">Yeni Blog Oluştur</a>
+<script>
+            $(".deletebtn").click((e)=> {
+
+               const id = e.target.value;
+                swal({
+          title: "Silme işlemini onayla",
+          text: "Blogu silmek istediğinize emin misiniz ?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+              $.ajax({url:`/Blog/DeleteBlog/${id}`}).done(()=>{
+                  setTimeout(function(){
+       window.location.reload(1);
+    }, 3000);
+              });
+            swal("Blog başarıyla silindi", {
+              icon: "success",
+            });
+          } else {
+            swal("Blog silinmedi");
+          }
+        });
+            })
+</script>
