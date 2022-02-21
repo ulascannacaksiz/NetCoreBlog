@@ -5,7 +5,6 @@ C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.deps.j
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.runtimeconfig.json
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.runtimeconfig.dev.json
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.dll
-C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\ref\CoreDemo.dll
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.pdb
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.Views.dll
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\CoreDemo.Views.pdb
@@ -185,3 +184,8 @@ C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Sha
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterNotification\Default.cshtml.g.cs
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\BlogListByWriter.cshtml.g.cs
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\BlogAdd.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\refint\CoreDemo.dll
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\EditBlog.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListDashboard\Default.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryListDashboard\Default.cshtml.g.cs

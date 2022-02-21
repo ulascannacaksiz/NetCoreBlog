@@ -1,6 +1,5 @@
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\bin\Debug\net5.0\EntityLayer.deps.json
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
-C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,3 +9,4 @@ C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\UlasCan\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\refint\EntityLayer.dll
