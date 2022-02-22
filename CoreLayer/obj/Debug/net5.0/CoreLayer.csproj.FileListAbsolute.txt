@@ -1,6 +1,5 @@
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\bin\Debug\net5.0\CoreLayer.deps.json
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\bin\Debug\net5.0\CoreLayer.dll
-C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\bin\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\bin\Debug\net5.0\CoreLayer.pdb
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.AssemblyReference.cache
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,3 +9,4 @@ C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\CoreLayer.cspr
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+C:\Users\UlasCan\source\repos\CoreDemo\CoreLayer\obj\Debug\net5.0\refint\CoreLayer.dll

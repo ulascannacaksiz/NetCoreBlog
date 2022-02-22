@@ -189,3 +189,5 @@ C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Blo
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListDashboard\Default.cshtml.g.cs
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryListDashboard\Default.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterAboutDashboard\Default.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Writer\WriterEditProfile.cshtml.g.cs

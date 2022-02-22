@@ -73,6 +73,10 @@
             if(pass !== $("#Password2").val()){
                 $("#sifretekrar").text("Şifreleriniz Eşleşmedi");
                 $("#sifretekrar").addClass("text-danger");
+            }else{
+                $("#sifretekrar").text("✓ Şifreleriniz Eşleşti");
+                $("#sifretekrar").removeClass("text-danger");
+                $("#sifretekrar").addClass("text-success");
             }
         })
     </script>
