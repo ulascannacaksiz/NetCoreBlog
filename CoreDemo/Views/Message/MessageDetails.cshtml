@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Message2
+
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+<style>
+.form-control:disabled, .form-control[readonly]{
+    background-color:#fff;
+}
+</style>
+<h1>Mesaj Detay</h1>
+
+    @Html.Label("Mesaj ID")
+    @Html.TextBoxFor(x=> x.MessageID, new{@class="form-control",@readonly = "readonly"} )
+    <br />
+    @Html.Label("Mesaj Başlığı")
+    @Html.TextBoxFor(x=> x.Subject, new{@class="form-control",@readonly = "readonly"} )
+    <br />
+    @Html.Label("Mesaj")
+    @Html.TextAreaFor(x=> x.MessageDetails,20,3, new{@class="form-control", @readonly = "readonly"} )
+    <br />
+    <button class="btn btn-dark">Mesajlara Dön</button>
+
