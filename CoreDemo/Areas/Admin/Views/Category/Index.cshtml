@@ -1,5 +1,6 @@
-﻿@using EntityLayer.Concrete
-@model List<Category>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<EntityLayer.Concrete.Category>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -13,19 +14,77 @@
     <tr>
         <th>#</th>
         <th>Kategori adı</th>
+        <th>Durum</th>
         <th>Pasif yap</th>
         <th>Aktif yap</th>
         <th>Düzenle</th>
     </tr>
     @foreach (var item in Model)
-   {
-       <tr>
-           <td>@item.CategoryID</td>
-           <td>@item.CategoryName</td>
-           <td><a href="" class="btn btn-warning">Pasif yap</a></td>
-           <td><a href="" class="btn btn-info">Aktif yap</a></td>
-           <td><a href="" class="btn btn-success">Düzenle</a></td>
-       </tr>
-       
-   }
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryStatus</td>
+            <td><button id="@item.CategoryID" class="btn btn-warning">Pasif yap</button></td>
+            <td><button id="@item.CategoryID" class="btn btn-info">Aktif yap</button></td>
+            <td><a href="" class="btn btn-success">Düzenle</a></td>
+        </tr>
+
+    }
 </table>
+<a href="/Admin/Category/AddCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
+<br />
+<br />
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new{page}))
+
+<script>
+    $('.btn-warning').click((e)=>{
+        let categoryId = e.target.id;
+        let categoryName = e.target.parentElement.parentElement.children[1].innerText;
+        swal({
+      title: `Uyarı: ${categoryName} kategorisi pasifleştirilecek`,
+      text: `${categoryName} kategorisini pasif istediğinize emin misiniz?`,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+          $.ajax({
+              url:"/Admin/Category/CategoryDelete/"+categoryId,
+              Method: "Post"
+          })
+        swal(`${categoryName} kategorisi pasifleştirildi`, {
+          icon: "success",
+        });
+      } else {
+        swal(`${categoryName} kategorisi pasifleştirilmedi`);
+      }
+    });
+    })
+
+        $('.btn-info').click((e)=>{
+        let categoryId = e.target.id;
+        let categoryName = e.target.parentElement.parentElement.children[1].innerText;
+        swal({
+      title: `Uyarı: ${categoryName} kategorisi aktifleştirilcek`,
+      text: categoryName + " Kategorisini aktif yapmak istediğinize emin misiniz?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+          $.ajax({
+              url:"/Admin/Category/CategoryActivate/"+categoryId,
+              Method: "Post"
+          })
+        swal(`${categoryName} kategorisi aktifleştirildi`, {
+          icon: "success",
+        });
+      } else {
+        swal(`${categoryName} kategorisi aktifleştirilmedi`);
+      }
+    });
+    })
+</script>
