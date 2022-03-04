@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Yazar Ajax İşlemleri</h1>
+<br />
+<button type="button" id="btngetlist" class="btn btn-outline-info">Yazar Listesi</button>
+<br />
+<br />
+<div>
+    <input type="text" id="writerid" class="form-control" placeholder="Yazar id" />
+</div>
+<br />
+<button type="button" id="btngetbyid" class="btn btn-outline-success">Yazar Getir</button>
+
+<button type="button" id="btndeletewriter" class="btn btn-outline-danger">Yazar Sil</button>
+<br />
+<br />
+
+<div>
+    <input type="text" id="txtwriterid" class="form-control" placeholder="Yazar id" />
+    <input type="text" id="txtwritername" class="form-control" placeholder="Yazar Adı" />
+    <button type="button" id="btnaddwriter" class="btn btn-outline-warning">Yazar Ekle</button>
+</div>
+
+<br />
+<br />
+<div id="writerlist">
+    Buraya yazarlar gelecek
+</div>
+<div id="writerget">
+    buraya bir yazar gelecek
+</div>
+
+@section scripts{
+<script>
+    $("#btngetlist").click(function(){
+        $.ajax({
+            contentType:"application/json",
+            dataType:"json",
+            type:"GET",
+            url:"/Admin/Writer/WriterList/",
+            success:function(func){
+                let w = jQuery.parseJSON(func);
+                console.log(w);
+                let tablehtml = "<table class=table table-bordered> <tr><th>Yazar id</th> <th>Yazar adı</th></tr>";
+                $.each(w,(index,value)=>{
+                    tablehtml+=`<tr><td>${value.Id}</td><td>${value.Name}</td></tr>`
+                });
+                 tablehtml+= "</table>";
+                 $("#writerlist").html(tablehtml);
+            }
+        });
+    });
+
+    $("#btngetbyid").click(x=>{
+        let val = $("#writerid").val();
+        $.ajax({
+            url:"/Admin/Writer/GetWriterByID?writerid="+val,
+            Method:"Post",
+            success:function(data){
+                let convertdata = JSON.parse(data);
+                let table = `<table class=table table-bordered><tr><th>Id</th> <th>Name</th></tr><tr> <td>${convertdata.Id}</td> <td>${convertdata.Name}</td>  </tr>`;
+               $("#writerget").html(table);
+            }
+        })
+    });
+
+    $("#btnaddwriter").click(()=>{
+        let writer = {
+            Id:$("#txtwriterid").val(),
+            Name:$("#txtwritername").val()
+        };
+        $.ajax({
+            url:"/Admin/Writer/AddWriter/",
+            method:"post",
+            data:writer,
+            success:((data)=>{
+                console.log(data);
+            })
+        })
+    })
+
+    $("#btndeletewriter").click(()=>{
+        $.ajax({
+            url:"/Admin/Writer/DeleteWriter/",
+            method:"post",
+            data:{id:$("#writerid").val()},
+            success:((data)=>{
+                console.log(data);
+            })
+        })
+    })
+
+</script>
+}
