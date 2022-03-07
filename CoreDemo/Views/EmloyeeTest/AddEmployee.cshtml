@@ -1,0 +1,15 @@
+﻿@using static CoreDemo.Controllers.EmloyeeTestController
+@model Class1
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>AddEmployee</h1>
+
+<form method="post">
+    <label>Çalışan Adı soyadı</label>
+    <input type="text" asp-for="@Model.Name" class="form-control"/>
+    <br />
+    <button class="btn btn-success" type="submit">Ekle</button>
+</form>

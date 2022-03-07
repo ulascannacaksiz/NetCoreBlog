@@ -1,0 +1,28 @@
+﻿@using static CoreDemo.Controllers.EmloyeeTestController
+@model List<Class1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table class="table table-bordered"> 
+    <tr>
+        <th>#</th>
+        <th>Adı soyadı</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+   {
+       <tr>
+           <td>@item.ID</td>
+           <td>@item.Name</td>
+           <td><a href="/EmloyeeTest/DeleteEmployee/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+           <td><a href="/EmloyeeTest/EditEmployee/@item.ID" class="btn btn-outline-success">Düzenle</a></td>
+
+       </tr>
+   }
+</table>
+<a href="/EmloyeeTest/AddEmployee/" class="btn btn-outline-primary">Yeni Çalışan Ekle</a>
