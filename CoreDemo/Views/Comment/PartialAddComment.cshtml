@@ -13,7 +13,6 @@
 </div>
 <script>
       $("#commentaddform").submit(function(){
-          alert();
           $.ajax({
             url:"/Comment/PartialAddComment",
             data:$("#commentaddform").serialize(),

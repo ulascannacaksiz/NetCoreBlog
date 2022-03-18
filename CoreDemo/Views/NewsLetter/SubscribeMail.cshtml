@@ -2,15 +2,18 @@
     <h4>Mail bültenine abone olun</h4>
     <p>Tüm blogları mail ile alın </p>
     <form method="post" id="newsletterform">
-        <input type="email" placeholder="Email" required="" name="Mail">
+        <input type="email" placeholder="Email" itemid="email" required="" name="Mail">
         <input type="submit" value="Subscribe" id="btn1">
     </form>
 </div>
 <script>
       $("#newsletterform").submit(function(){
+          let values = {
+              Mail:$("#email").val()
+          }
           $.ajax({
             url:"/NewsLetter/SubscribeMail",
-            data:$("#newsletterform").serialize(),
+            data:values,
             method:"POST",
             }).done(function( data ) {
                 console.log("Başarılı");
