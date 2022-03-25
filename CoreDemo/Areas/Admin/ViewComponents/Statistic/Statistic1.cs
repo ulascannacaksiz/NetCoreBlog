@@ -17,9 +17,10 @@ namespace CoreDemo.Areas.Admin.ViewComponents.Statistic
             ViewBag.v2 = c.Contacts.Count();
             ViewBag.v3 = c.Comments.Count();
             string api = "Your api key";
-            string connection = "http://api.weatherapi.com/v1/current.xml?key="+api+"&q=İstanbul";
-            XDocument document = XDocument.Load(connection);
-            ViewBag.v4 = document.Descendants("temp_c").First().Value;
+            // string connection = "http://api.weatherapi.com/v1/current.xml?key="+api+"&q=İstanbul";
+            //XDocument document = XDocument.Load(connection);
+            //ViewBag.v4 = document.Descendants("temp_c").First().Value;
+            ViewBag.v4 = 12;
             return View();
         }
     }
