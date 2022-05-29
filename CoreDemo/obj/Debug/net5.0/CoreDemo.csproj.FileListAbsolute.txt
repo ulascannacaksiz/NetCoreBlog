@@ -239,3 +239,5 @@ C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Mes
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminMessage\Inbox.cshtml.g.cs
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminMessage\Sendbox.cshtml.g.cs
 C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminMessage\ComposeMail.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminBlog\Index.cshtml.g.cs
+C:\Users\UlasCan\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminComment\Index.cshtml.g.cs

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EntityLayer.Concrete.Message2
+@{
     ViewData["Title"] = "ComposeMail";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
@@ -48,7 +49,7 @@
 
                 <div class="mail-body">
 
-                    <form method="get">
+                    <form method="post" asp-action="ComposeMail">
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Alcı:</label>
 
@@ -57,26 +58,24 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Konu:</label>
 
-                            <div class="col-sm-10"><input type="text" class="form-control" value=""></div>
+                            <div class="col-sm-10"><input type="text" class="form-control" value="" name="Subject"></div>
                         </div>
                         <div class="mail-text h-200">
 
-
-
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Mesajınız:</label>
-
-                               <textarea class="form-control" rows"4" cols"10"></textarea>
+                                <textarea class="form-control" rows"4" cols"10" name="MessageDetails"></textarea>
                             </div>
                             <div class="clearfix"></div>
                         </div>
+                        <input type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Gönder">
+
                     </form>
 
                 </div>
 
 
                 <div class="mail-body text-right tooltip-demo">
-                    <a href="mailbox.html" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Gönder"><i class="fa fa-reply"></i> Gönder</a>
                     <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Vazgeç"><i class="fa fa-times"></i> Vazgeç</a>
                     <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Taslak olarak kayıt et"><i class="fa fa-pencil"></i> Taslak</a>
                 </div>
